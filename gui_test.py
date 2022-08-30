@@ -1,5 +1,4 @@
-from guizero import app
+from guizero import App
 
 app = App(title="Home Nexus")
-app.display
-
+app.display()
