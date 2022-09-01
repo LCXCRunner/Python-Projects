@@ -11,7 +11,7 @@ sense = SenseHat()
 while True:
     for x in sense.stick.get_events():
         if x.direction == 'up':
-            sense.show_message("Hello World!",text_colour=(106,0,50),back_colour=(255,200,46))
+            sense.show_message("Goodnight Ruby",text_colour=(255,0,00),back_colour=(255,255,255))
         elif x.direction == 'down':
             sense.show_letter("D")
         elif x.direction == 'left':
