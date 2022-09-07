@@ -12,7 +12,8 @@ temp_pressure = sense.get_temperature_from_pressure()
 humidity = sense.get_humidity()
 pressure = sense.get_pressure()
 
-
+text_1 = Text(app,"Pressure Temp:")
+text_2 = temp_humidity
 
 
 
