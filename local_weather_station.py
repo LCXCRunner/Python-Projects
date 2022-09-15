@@ -8,12 +8,6 @@ import sys
 
 sense = SenseHat()
 
-app = App(title="Home Nexus", height = 1000, width = 1000, layout="grid")
-
-#box = Box(app, layout="grid", grid=[1,0])
-
-top_message = Text(app,"Home Interface",color="blue", grid=[0,0])
-
 temp_humidity = sense.get_temperature_from_humidity()
 temp_pressure = sense.get_temperature_from_pressure()
 humidity = sense.get_humidity()
@@ -21,13 +15,17 @@ pressure = sense.get_pressure()
 
 rounded_temp_humidity = round(temp_humidity, 2)
 
-#temp_humidity_title = "Temerature from Humidity"
+app = App(title="Home Nexus", height = 100, width = 500)
 
-text_0 = Text(app, "Temperature (deg C)", color="blue", grid=[1,0])
-text_1 = Text(app,  rounded_temp_humidity, color="blue", grid=[2,0])
-text_2 = Text(app, temp_humidity, grid=[3,0])
+top_message = Text(app,"Home Interface",color="blue", align="center")
 
-Button = PushButton(app, text="Close Window", command=sys.exit, grid=[2,2])
+box_1 = Box(app, layout="grid", align="center")
+text_0 = Text(box_1, "Temperature (deg C):", color="blue", grid=[0,0])
+text_1 = Text(box_1, rounded_temp_humidity, color="blue", grid=[1,0])
+text_2 = Text(box_1, temp_humidity, grid=[0,2])
+
+box_2 = Box(app, align="right")
+Button = PushButton(box_2, text="Close Window", command=sys.exit)
 
 
 app.display()
