@@ -1,9 +1,10 @@
 from guizero import App, Text
-from sense_hat import SenseHat
 
-app = App(title="Home Nexus")
+# Action you would like to perform
+def counter():
+    text.value = int(text.value) + 1
 
-top_message = Text(app,"Home Interface",color="blue")
-
-
+app = App("Hello world")
+text = Text(app, text="1")
+text.repeat(1000, counter)  # Schedule call to counter() every 1000ms
 app.display()
